@@ -23,7 +23,7 @@ const App = () => {
                         </p>
                     ) : (
                         <button
-                            className='button gradient alternate'
+                            className='button gradient'
                             type='submit'
                             onClick={handleStartClick}>Start
                         </button>
