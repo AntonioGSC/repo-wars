@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { FaExchangeAlt } from 'react-icons/fa'
+import './game.css'
+import RepoCard from './RepoCard';
 
 interface GameProps {
     repoState: [Repo[], React.Dispatch<React.SetStateAction<Repo[]>>];
@@ -20,6 +23,10 @@ const Game: React.FC<GameProps> = ({
         setRepo2(originalList[1])
     }, [])
 
+    const handleChoice = () => {
+        
+    }
+
     return <div className='game'>
         {over ? (
             <div className='score'></div>
@@ -27,21 +34,21 @@ const Game: React.FC<GameProps> = ({
             repo1 && repo2 && <div className='repos'>
                 <h1 className='title'>Choose the Repo with most start</h1>
                 <div className='container'>
-                    <div>
-                        <h1>{repo1.name} - {repo1.full_name}</h1>
-                    </div>
+                    <RepoCard content={repo1} handler={handleChoice} />
                     <div className='dashboard'>
-                        Versus
+                        <FaExchangeAlt className='icon-versus' />
                     </div>
-                    <div>
-                        <h1>{repo2.name} - {repo2.full_name}</h1>
-                    </div>
+                    <RepoCard content={repo2} handler={handleChoice}/>
                 </div>
             </div>
         )}
         <div className='buttons'>
-            <button type='submit' className='button gradient' onClick={() => setShowGame(false)}>Back</button>
-            <button type='submit' className='button gradient' onClick={() => setShowGame(false)}>Skip</button>
+            <button type='submit' className='button gradient alternate' onClick={() => setShowGame(false)}>{over ? 'Play Again' : 'Back'}</button>
+            {
+                !over && (
+                    <button type='submit' className='button gradient' onClick={() => setShowGame(false)}>Skip</button>
+                )
+            }
         </div>
     </div>
 };

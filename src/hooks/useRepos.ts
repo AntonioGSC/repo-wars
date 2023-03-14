@@ -11,7 +11,7 @@ const randomSince = Math.floor(Math.random() * 1000000);
 
 const fetchRepos = async (amount: number, setters: Dispatch<SetStateAction<any[]>>[]) => {
     const res = await githubClient.request('GET /search/repositories', {
-        q: `is:public starts:>1000 fork:false`,
+        q: `is:public stars:>1000 fork:false`,
         sort: 'stars',
         order: 'desc',
         per_page: amount,
