@@ -1,1 +1,1 @@
-export { default as githubClient } from './github'
+export { default as githubClient } from './github';
