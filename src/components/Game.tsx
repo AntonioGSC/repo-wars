@@ -76,16 +76,16 @@ const Game: React.FC<GameProps> = ({
                         <div className='container'>
                             <RepoCard content={repo1} handler={handleChoice} />
 
-                            <div className="result correct">
-                                <p>{correct}</p>
-                                <FaCheckCircle />
-                            </div>
                             <div className='dashboard'>
+                                <div className="result correct">
+                                    <p>{correct}</p>
+                                    <FaCheckCircle />
+                                </div>
                                 <FaExchangeAlt className='icon-versus' />
-                            </div>
-                            <div className="result wrong">
-                                <p>{wrong}</p>
-                                <FaTimesCircle />
+                                <div className="result wrong">
+                                    <p>{wrong}</p>
+                                    <FaTimesCircle />
+                                </div>
                             </div>
                             <RepoCard content={repo2} handler={handleChoice} />
                         </div>
