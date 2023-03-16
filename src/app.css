@@ -16,11 +16,9 @@
 }
 
 .gradient {
-    background: -webkit-linear-gradient(
-        bottom,
-        var(--color-primary),
-        var(--color-highlight)
-    );
+    background: -webkit-linear-gradient(bottom,
+            var(--color-primary),
+            var(--color-highlight));
 }
 
 .gradient.text {
@@ -30,11 +28,9 @@
 }
 
 .gradient.alternate {
-    background: -webkit-linear-gradient(
-        bottom,
-        var(--color-danger),
-        var(--color-secondary)
-    );
+    background: -webkit-linear-gradient(bottom,
+            var(--color-danger),
+            var(--color-secondary));
 }
 
 /* Base Styles */
@@ -90,9 +86,11 @@ main {
     0% {
         transform: translatex(0);
     }
+
     50% {
         transform: translateX(-0.5rem);
     }
+
     100% {
         transform: translateX(0);
     }
@@ -111,23 +109,51 @@ main {
 }
 
 .button.gradient:hover {
-    background: -webkit-linear-gradient(
-        right,
-        var(--color-primary),
-        var(--color-highlight)
-    );
+    background: -webkit-linear-gradient(right,
+            var(--color-primary),
+            var(--color-highlight));
     color: var(--color-light);
     box-shadow: 0px 5px var(--color-light);
     transform: translatey(-5px);
 }
 
 .button.gradient.alternate:hover {
-    background: -webkit-linear-gradient(
-        right,
-        var(--color-danger),
-        var(--color-secondary)
-    );
+    background: -webkit-linear-gradient(right,
+            var(--color-danger),
+            var(--color-secondary));
     color: var(--color-light);
     box-shadow: 0px 5px var(--color-light);
     transform: translatey(-5px);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    .headline {
+        font-size: 1.5rem;
+    }
+
+    .start-button {
+        font-size: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .headline {
+        font-size: 1rem;
+    }
+
+    .start-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        margin-top: 1.5rem;
+    }
 }
